@@ -49,22 +49,22 @@
 				<tr>
 					<td width="80px">用户名：</td>				
 					<td>
-						<input type="hidden" id="id" name="id" value="${blogger.id }"/>
-						<input type="text" id="username" name="username" style="width:200px" readonly="readonly" value="${blogger.username }"/>
+						<input type="hidden" id="id" name="id" value="${currentUser.id }"/>
+						<input type="text" id="username" name="username" style="width:200px" readonly="readonly" value="${currentUser.username }"/>
 					</td>
 				</tr>
 				<tr>
 					<td>昵称：</td>
 					<td>
 						<input type="text" id="nickname" name="nickname" style="width:200px" 
-							class="easyui-validatebox" required="true"/>
+							class="easyui-validatebox" required="true" value="${currentUser.nickname }"/>
 					</td>
 				</tr>
 				<tr>
 					<td>个性签名：</td>
 					<td>
 						<input type="text" id="sign" name="sign" style="width:400px" 
-							class="easyui-validatebox" required="true""/>
+							class="easyui-validatebox" required="true" value="${currentUser.sign }"/>
 					</td>
 				</tr>
 				<tr>

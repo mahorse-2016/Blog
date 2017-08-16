@@ -12,7 +12,7 @@ import ssm.blog.entity.BlogType;
 import ssm.blog.service.BlogTypeService;
 
 /**
- * @Description ²©¿ÍÀà±ğServiceÊµÏÖÀà
+ * @Description åšå®¢ç±»åˆ«Serviceå®ç°ç±»
  * @author Ni Shengwu
  *
  */
@@ -22,7 +22,7 @@ public class BlogTypeServiceImpl implements BlogTypeService {
 	@Resource
 	private BlogTypeDao blogTypeDao;
 
-	//»ñÈ¡²©¿ÍÀà±ğĞÅÏ¢
+	//è·å–åšå®¢ç±»åˆ«ä¿¡æ¯
 	public List<BlogType> getBlogTypeData() {
 		
 		return blogTypeDao.getBlogTypeData();

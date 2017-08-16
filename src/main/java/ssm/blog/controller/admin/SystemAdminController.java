@@ -24,8 +24,8 @@ import ssm.blog.service.LinkService;
 import ssm.blog.util.ResponseUtil;
 
 /**
- * @Description ¹ÜÀíÔ±ÏµÍ³controller²ã
- * @author Ni Shengwu
+ * @Description ç®¡ç†å‘˜ç³»ç»Ÿcontrollerå±‚
+ * @author MaHao
  *
  */
 @Controller
@@ -41,7 +41,7 @@ public class SystemAdminController {
 	@Resource
 	private BlogService blogService;
 
-	// Ë¢ĞÂÏµÍ³»º´æ
+	// åˆ·æ–°ç³»ç»Ÿç¼“å­˜
 	@RequestMapping("/refreshSystemCache")
 	public String refreshSystemCache(
 			HttpServletRequest request,
@@ -49,20 +49,20 @@ public class SystemAdminController {
 
 		ServletContext application = RequestContextUtils.getWebApplicationContext(request).getServletContext();
 		
-		// »ñÈ¡²©Ö÷ĞÅÏ¢
+		// è·å–åšä¸»ä¿¡æ¯
 		Blogger blogger = bloggerService.getBloggerData();
 		blogger.setPassword(null);
 		application.setAttribute("blogger", blogger);
 
-		// »ñÈ¡ÓÑÇéÁ´½ÓĞÅÏ¢
+		// è·å–å‹æƒ…é“¾æ¥ä¿¡æ¯
 		List<Link> linkList = linkService.getLinkData(); 
 		application.setAttribute("linkList", linkList);
 
-		// »ñÈ¡²©¿ÍÀà±ğĞÅÏ¢
+		// è·å–åšå®¢ç±»åˆ«ä¿¡æ¯
 		List<BlogType> blogTypeList = blogTypeService.getBlogTypeData();
 		application.setAttribute("blogTypeList", blogTypeList);
 
-		// »ñÈ¡²©¿ÍĞÅÏ¢£¬°´ÕÕÊ±¼ä·ÖÀàµÄ
+		// è·å–åšå®¢ä¿¡æ¯ï¼ŒæŒ‰ç…§æ—¶é—´åˆ†ç±»çš„
 		List<Blog> blogTimeList = blogService.getBlogData();
 		application.setAttribute("blogTimeList", blogTimeList);
 		

@@ -1,8 +1,8 @@
 package ssm.blog.entity;
 
 /**
- * @Description 博客类型实体
- * @author Ni Shengwu
+ * @Description 鍗氬绫诲瀷瀹炰綋
+ * @author MaHao
  *
  */
 public class BlogType {
@@ -11,7 +11,7 @@ public class BlogType {
 	private String typeName;
 	private String orderNum;
 	
-	private Integer blogCount; //统计不同类型的博客数量的
+	private Integer blogCount; //缁熻涓嶅悓绫诲瀷鐨勫崥瀹㈡暟閲忕殑
 	
 	public Integer getId() {
 		return id;

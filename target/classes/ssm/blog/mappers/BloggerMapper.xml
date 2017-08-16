@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM t_blogger WHERE username=#{username}
 	</select>
 	
-	<select id="getBloggerData" resultMap="BloggerResult">
+	<select id="getBloggerData"  resultMap="BloggerResult">
 		SELECT * FROM t_blogger WHERE id=1
 	</select>
 	

@@ -27,29 +27,29 @@ public class InitBloggerData implements ServletContextListener, ApplicationConte
 	
 	public void contextInitialized(ServletContextEvent sce) {
 		System.out.println(applicationContext);
-		//ÏÈ»ñÈ¡servletÉÏÏÂÎÄ
+		//å…ˆè·å–servletä¸Šä¸‹æ–‡
 		ServletContext application = sce.getServletContext();
 		
-		//¸ù¾İspringµÄÉÏÏÂÎÄ»ñÈ¡bloggerServiceÕâ¸öbean
+		//æ ¹æ®springçš„ä¸Šä¸‹æ–‡è·å–bloggerServiceè¿™ä¸ªbean
 		BloggerService bloggerService = (BloggerService) applicationContext.getBean("bloggerService");
-		//»ñÈ¡²©Ö÷ĞÅÏ¢
+		//è·å–åšä¸»ä¿¡æ¯
 		Blogger blogger = bloggerService.getBloggerData();
-		//ÓÉÓÚÃÜÂëÒ²»ñÈ¡µ½ÁË£¬±È½ÏÃô¸Ğ£¬ÎÒÃÇÒ²²»ĞèÒªÕâ¸ö£¬ËùÒÔ°ÑÃÜÂëÇå¿Õµô
-		blogger.setPassword(null);
-		//½«²©Ö÷ĞÅÏ¢´æÈëapplicationÓòÖĞ
+		//ç”±äºå¯†ç ä¹Ÿè·å–åˆ°äº†ï¼Œæ¯”è¾ƒæ•æ„Ÿï¼Œæˆ‘ä»¬ä¹Ÿä¸éœ€è¦è¿™ä¸ªï¼Œæ‰€ä»¥æŠŠå¯†ç æ¸…ç©ºæ‰
+		//blogger.setPassword(null);
+		//å°†åšä¸»ä¿¡æ¯å­˜å…¥applicationåŸŸä¸­
 		application.setAttribute("blogger", blogger);
 		
-		//Í¬ÉÏ£¬»ñÈ¡ÓÑÇéÁ´½ÓĞÅÏ¢
+		//åŒä¸Šï¼Œè·å–å‹æƒ…é“¾æ¥ä¿¡æ¯
 		LinkService linkService = (LinkService) applicationContext.getBean("linkService");
 		List<Link> linkList = linkService.getLinkData(); 
 		application.setAttribute("linkList", linkList);
 		
-		//Í¬ÉÏ£¬»ñÈ¡²©¿ÍÀà±ğĞÅÏ¢
+		//åŒä¸Šï¼Œè·å–åšå®¢ç±»åˆ«ä¿¡æ¯
 		BlogTypeService blogTypeService = (BlogTypeService) applicationContext.getBean("blogTypeService");
 		List<BlogType> blogTypeList = blogTypeService.getBlogTypeData();
 		application.setAttribute("blogTypeList", blogTypeList);
 		
-		//Í¬ÉÏ£¬»ñÈ¡²©¿ÍĞÅÏ¢£¬°´ÕÕÊ±¼ä·ÖÀàµÄ
+		//åŒä¸Šï¼Œè·å–åšå®¢ä¿¡æ¯ï¼ŒæŒ‰ç…§æ—¶é—´åˆ†ç±»çš„
 		BlogService blogService = (BlogService) applicationContext.getBean("blogService");
 		List<Blog> blogTimeList = blogService.getBlogData();
 		application.setAttribute("blogTimeList", blogTimeList);
